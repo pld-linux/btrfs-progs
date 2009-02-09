@@ -1,11 +1,11 @@
 Summary:	Utilities belonging to the btrfs filesystem
 Name:		btrfs-progs
-Version:	0.17
+Version:	0.18
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://www.kernel.org/pub/linux/kernel/people/mason/btrfs/%{name}-%{version}.tar.bz2
-# Source0-md5:	88d1fde8ecf237fc210510911ba06786
+# Source0-md5:	f1d49b54e3059f127fc82eab4fafcb8e
 URL:		http://btrfs.wiki.kernel.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
