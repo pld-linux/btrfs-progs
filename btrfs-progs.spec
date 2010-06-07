@@ -1,11 +1,17 @@
 Summary:	Utilities belonging to the btrfs filesystem
 Name:		btrfs-progs
 Version:	0.19
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://www.kernel.org/pub/linux/kernel/people/mason/btrfs/%{name}-%{version}.tar.bz2
 # Source0-md5:	5854728d080cc76f21a83bdc99b6ddaa
+Patch0:		%{name}-fix-labels.patch
+Patch1:		%{name}-build-everything.patch
+Patch2:		%{name}-valgrind.patch
+Patch3:		%{name}-fix-return-value.patch
+Patch4:		%{name}-build-fixes.patch
+Patch5:		%{name}-upstream.patch
 URL:		http://btrfs.wiki.kernel.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -21,6 +27,12 @@ repair and easy administration.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
+%patch5 -p1
+%patch1 -p1
 
 sed -i -e 's#gcc#$(CC)#g' Makefile
 
