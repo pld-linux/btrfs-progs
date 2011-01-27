@@ -13,9 +13,8 @@ Patch3:		%{name}-fix-return-value.patch
 Patch4:		%{name}-build-fixes.patch
 Patch5:		%{name}-upstream.patch
 URL:		http://btrfs.wiki.kernel.org/
-BuildRequires:	autoconf >= 2.50
-BuildRequires:	automake
 BuildRequires:	libuuid-devel
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sbindir	/sbin
