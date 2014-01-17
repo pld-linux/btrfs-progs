@@ -1,4 +1,5 @@
 Summary:	Utilities belonging to the btrfs filesystem
+Summary(pl.UTF-8):	Narzędzia należące do systemu plików btrfs
 Name:		btrfs-progs
 Version:	3.12
 Release:	1
@@ -24,17 +25,37 @@ Btrfs is a new copy on write filesystem for Linux aimed at
 implementing advanced features while focusing on fault tolerance,
 repair and easy administration.
 
+%description -l pl.UTF-8
+Btrfs to nowy system plików dla Linuksa oparty na zasadzie kopiowania
+przy zapisie (copy-on-write), którego celem jest zaimplementowanie
+zaawansowanych możliwości ze szczególnym naciskiem na odporność na
+awarie, naprawę i łatwe administrowanie.
+
 %package devel
-Summary:	btrfs filesystem-specific libraries and headers
+Summary:	Header files for btrfs filesystem-specific library
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki dla systemu plików btrfs
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
-btrfs-progs-devel contains the libraries and header files needed to
-develop btrfs filesystem-specific programs.
-
-You should install btrfs-progs-devel if you want to develop btrfs
+This package contains the header files needed to develop btrfs
 filesystem-specific programs.
+
+%description devel -l pl.UTF-8
+Ten pakiet zawiera pliki nagłówkowe potrzebne przy tworzeniu programów
+przeznaczonych dla systemu plików btrfs.
+
+%package static
+Summary:	Static btrfs filesystem library
+Summary(pl.UTF-8):	Statyczna biblioteka dla systemu plików btrfs
+Group:		Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
+
+%description static
+Static btrfs filesystem library.
+
+%description static -l pl.UTF-8
+Statyczna biblioteka dla systemu plików btrfs.
 
 %prep
 %setup -q -n %{name}-v%{version}
@@ -57,8 +78,6 @@ install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man8}
 
 ln -sf btrfsck $RPM_BUILD_ROOT%{_sbindir}/fsck.btrfs
 
-rm $RPM_BUILD_ROOT%{_libdir}/*.a
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -78,7 +97,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_sbindir}/btrfs-find-root
 %attr(755,root,root) %{_sbindir}/btrfs-show-super
 %attr(755,root,root) %{_libdir}/libbtrfs.so.*.*
-%ghost %{_libdir}/libbtrfs.so.0
+%attr(755,root,root) %ghost %{_libdir}/libbtrfs.so.0
 %{_mandir}/man8/btrfs-image.8*
 %{_mandir}/man8/btrfsck.8*
 %{_mandir}/man8/mkfs.btrfs.8*
@@ -93,5 +112,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libbtrfs.so
 %{_includedir}/btrfs
-%{_libdir}/libbtrfs.so
+
+%files static
+%defattr(644,root,root,755)
+%{_libdir}/libbtrfs.a
