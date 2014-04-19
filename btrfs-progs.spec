@@ -1,12 +1,13 @@
 Summary:	Utilities belonging to the btrfs filesystem
 Summary(pl.UTF-8):	Narzędzia należące do systemu plików btrfs
 Name:		btrfs-progs
-Version:	3.12
+Version:	3.14.1
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	https://www.kernel.org/pub/linux/kernel/people/mason/btrfs-progs/%{name}-v%{version}.tar.xz
-# Source0-md5:	cd96bb73acd864e577cddba5fe310650
+# Source0-md5:	761d07cfe5b468ec733e90a57b413e5c
+Patch0:		%{name}-arg_strtou64.patch
 URL:		http://btrfs.wiki.kernel.org/
 BuildRequires:	acl-devel
 BuildRequires:	e2fsprogs-devel
@@ -59,6 +60,7 @@ Statyczna biblioteka dla systemu plików btrfs.
 
 %prep
 %setup -q -n %{name}-v%{version}
+%patch0 -p1
 
 %build
 %{__make} \
@@ -109,6 +111,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man8/btrfs-show-super.8*
 %{_mandir}/man8/btrfs-zero-log.8*
 %{_mandir}/man8/btrfstune.8*
+%{_mandir}/man8/fsck.btrfs.8*
 
 %files devel
 %defattr(644,root,root,755)
