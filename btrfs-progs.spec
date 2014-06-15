@@ -1,13 +1,13 @@
 Summary:	Utilities belonging to the btrfs filesystem
 Summary(pl.UTF-8):	Narzędzia należące do systemu plików btrfs
 Name:		btrfs-progs
-Version:	3.14.1
+Version:	3.14.2
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	https://www.kernel.org/pub/linux/kernel/people/mason/btrfs-progs/%{name}-v%{version}.tar.xz
-# Source0-md5:	761d07cfe5b468ec733e90a57b413e5c
-Patch0:		%{name}-arg_strtou64.patch
+# Source0-md5:	18dadb86a668c3fe26b2bcb57bbdf59e
+Patch0:		%{name}-man.patch
 URL:		http://btrfs.wiki.kernel.org/
 BuildRequires:	acl-devel
 BuildRequires:	e2fsprogs-devel
@@ -100,18 +100,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_sbindir}/btrfs-show-super
 %attr(755,root,root) %{_libdir}/libbtrfs.so.*.*
 %attr(755,root,root) %ghost %{_libdir}/libbtrfs.so.0
-%{_mandir}/man8/btrfs-image.8*
-%{_mandir}/man8/btrfsck.8*
-%{_mandir}/man8/mkfs.btrfs.8*
 %{_mandir}/man8/btrfs.8*
-%{_mandir}/man8/btrfs-convert.8*
-%{_mandir}/man8/btrfs-debug-tree.8*
-%{_mandir}/man8/btrfs-find-root.8*
-%{_mandir}/man8/btrfs-map-logical.8*
-%{_mandir}/man8/btrfs-show-super.8*
-%{_mandir}/man8/btrfs-zero-log.8*
+%{_mandir}/man8/btrfs-*.8*
+%{_mandir}/man8/btrfsck.8*
 %{_mandir}/man8/btrfstune.8*
 %{_mandir}/man8/fsck.btrfs.8*
+%{_mandir}/man8/mkfs.btrfs.8*
 
 %files devel
 %defattr(644,root,root,755)

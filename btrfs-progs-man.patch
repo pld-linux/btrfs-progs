@@ -1,0 +1,11 @@
+--- btrfs-progs-v3.14.2/Documentation/Makefile.orig	2014-05-30 02:56:59.000000000 +0200
++++ btrfs-progs-v3.14.2/Documentation/Makefile	2014-06-15 20:37:16.269541245 +0200
+@@ -74,7 +74,7 @@
+ install-man: man
+ 	$(INSTALL) -d -m 755 $(DESTDIR)$(man8dir)
+ 	$(INSTALL) -m 644 $(GZ_MAN8) $(DESTDIR)$(man8dir)
+-	$(LNS) btrfs-check.8.gz $(DESTDIR)$(man8dir)
++	$(LNS) btrfs-check.8 $(DESTDIR)$(man8dir)/btrfsck.8
+ 
+ clean:
+ 	$(RM) *.xml *.xml+ *.8 *.8.gz
