@@ -13,7 +13,7 @@ BuildRequires:	acl-devel
 BuildRequires:	e2fsprogs-devel
 BuildRequires:	libblkid-devel
 BuildRequires:	libuuid-devel
-BuildRequires:	lzo-devel
+BuildRequires:	lzo-devel >= 2
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRequires:	zlib-devel
