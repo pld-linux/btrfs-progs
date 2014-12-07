@@ -10,6 +10,7 @@ Source0:	https://www.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/%{name
 Patch0:		%{name}-man.patch
 URL:		http://btrfs.wiki.kernel.org/
 BuildRequires:	acl-devel
+BuildRequires:	asciidoc
 BuildRequires:	e2fsprogs-devel
 BuildRequires:	libblkid-devel
 BuildRequires:	libuuid-devel
