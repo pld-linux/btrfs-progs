@@ -1,21 +1,25 @@
 Summary:	Utilities belonging to the btrfs filesystem
 Summary(pl.UTF-8):	Narzędzia należące do systemu plików btrfs
 Name:		btrfs-progs
-Version:	3.18.2
-Release:	2
+Version:	3.19
+Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	https://www.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/%{name}-v%{version}.tar.xz
-# Source0-md5:	1059a9f7e444be704cfaccc0df128265
+# Source0-md5:	edb76ab11d78df7a5d5981807583acc2
 Patch0:		%{name}-man.patch
 URL:		http://btrfs.wiki.kernel.org/
 BuildRequires:	acl-devel
 BuildRequires:	asciidoc
+BuildRequires:	autoconf >= 2.60
 BuildRequires:	e2fsprogs-devel
 BuildRequires:	libblkid-devel
+BuildRequires:	libcom_err-devel
 BuildRequires:	libuuid-devel
 BuildRequires:	lzo-devel >= 2
+BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	xmlto
 BuildRequires:	xz
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -64,10 +68,11 @@ Statyczna biblioteka dla systemu plików btrfs.
 %patch0 -p1
 
 %build
+%{__aclocal}
+%{__autoconf}
+%configure
 %{__make} \
-	V=1 \
-	CC="%{__cc}" \
-	CFLAGS="%{rpmcppflags} %{rpmcflags} -fno-strict-aliasing"
+	V=1
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -98,6 +103,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_sbindir}/btrfs-map-logical
 %attr(755,root,root) %{_sbindir}/btrfs-zero-log
 %attr(755,root,root) %{_sbindir}/btrfs-find-root
+%attr(755,root,root) %{_sbindir}/btrfs-select-super
 %attr(755,root,root) %{_sbindir}/btrfs-show-super
 %attr(755,root,root) %{_libdir}/libbtrfs.so.*.*
 %attr(755,root,root) %ghost %{_libdir}/libbtrfs.so.0
