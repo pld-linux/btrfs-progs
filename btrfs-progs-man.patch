@@ -1,11 +1,13 @@
---- btrfs-progs-v3.16/Documentation/Makefile~	2014-08-26 15:50:36.000000000 +0200
-+++ btrfs-progs-v3.16/Documentation/Makefile.in	2014-11-08 20:42:52.850482084 +0100
-@@ -89,7 +89,7 @@
+--- btrfs-progs-v4.0/Documentation/Makefile.in.orig	2015-05-09 21:02:52.752774167 +0200
++++ btrfs-progs-v4.0/Documentation/Makefile.in	2015-05-09 21:04:41.596102933 +0200
+@@ -91,8 +91,8 @@
  	# want to keep the code generic
- 	mv $(DESTDIR)$(man5dir)/btrfs-mount.5.gz $(DESTDIR)$(man5dir)/btrfs.5.gz
+ 	$(MV) $(DESTDIR)$(man5dir)/btrfs-mount.5.gz $(DESTDIR)$(man5dir)/btrfs.5.gz
  	$(INSTALL) -m 644 $(GZ_MAN8) $(DESTDIR)$(man8dir)
 -	$(LN_S) -f btrfs-check.8.gz $(DESTDIR)$(man8dir)/btrfsck.8.gz
-+	$(LN_S) -f btrfs-check.8 $(DESTDIR)$(man8dir)/btrfsck.8.
+-	$(LN_S) -f btrfs-rescue.8.gz $(DESTDIR)$(man8dir)/btrfs-zero-log.8.gz
++	$(LN_S) -f btrfs-check.8 $(DESTDIR)$(man8dir)/btrfsck.8
++	$(LN_S) -f btrfs-rescue.8 $(DESTDIR)$(man8dir)/btrfs-zero-log.8
  
  uninstall:
  	cd $(DESTDIR)$(man8dir); rm -f btrfs-check.8.gz $(GZ_MAN8)
