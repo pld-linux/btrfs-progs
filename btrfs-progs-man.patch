@@ -1,13 +1,17 @@
---- btrfs-progs-v4.0/Documentation/Makefile.in.orig	2015-05-09 21:02:52.752774167 +0200
-+++ btrfs-progs-v4.0/Documentation/Makefile.in	2015-05-09 21:04:41.596102933 +0200
-@@ -91,8 +91,8 @@
+--- btrfs-progs-v4.5.1/Documentation/Makefile.in.orig	2016-04-01 21:55:07.283162563 +0200
++++ btrfs-progs-v4.5.1/Documentation/Makefile.in	2016-04-01 21:56:25.349825953 +0200
+@@ -92,10 +92,10 @@
  	# want to keep the code generic
- 	$(MV) $(DESTDIR)$(man5dir)/btrfs-mount.5.gz $(DESTDIR)$(man5dir)/btrfs.5.gz
+ 	$(MV) $(DESTDIR)$(man5dir)/btrfs-man5.5.gz $(DESTDIR)$(man5dir)/btrfs.5.gz
  	$(INSTALL) -m 644 $(GZ_MAN8) $(DESTDIR)$(man8dir)
 -	$(LN_S) -f btrfs-check.8.gz $(DESTDIR)$(man8dir)/btrfsck.8.gz
 -	$(LN_S) -f btrfs-rescue.8.gz $(DESTDIR)$(man8dir)/btrfs-zero-log.8.gz
+-	$(LN_S) -f btrfs-inspect-internal.8.gz $(DESTDIR)$(man8dir)/btrfs-debug-tree.8.gz
+-	$(LN_S) -f btrfs-inspect-internal.8.gz $(DESTDIR)$(man8dir)/btrfs-show-super.8.gz
 +	$(LN_S) -f btrfs-check.8 $(DESTDIR)$(man8dir)/btrfsck.8
 +	$(LN_S) -f btrfs-rescue.8 $(DESTDIR)$(man8dir)/btrfs-zero-log.8
++	$(LN_S) -f btrfs-inspect-internal.8 $(DESTDIR)$(man8dir)/btrfs-debug-tree.8
++	$(LN_S) -f btrfs-inspect-internal.8 $(DESTDIR)$(man8dir)/btrfs-show-super.8
  
  uninstall:
  	cd $(DESTDIR)$(man8dir); rm -f btrfs-check.8.gz $(GZ_MAN8)
