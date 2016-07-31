@@ -1,12 +1,12 @@
 Summary:	Utilities belonging to the btrfs filesystem
 Summary(pl.UTF-8):	Narzędzia należące do systemu plików btrfs
 Name:		btrfs-progs
-Version:	4.5.3
+Version:	4.7
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	https://www.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/%{name}-v%{version}.tar.xz
-# Source0-md5:	3feb593cb52df7570769559366d5e320
+# Source0-md5:	ce139902859bb0ed9efd3b120ede371e
 Patch0:		%{name}-man.patch
 URL:		http://btrfs.wiki.kernel.org/
 BuildRequires:	acl-devel
@@ -107,6 +107,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_sbindir}/btrfs-show-super
 %attr(755,root,root) %{_libdir}/libbtrfs.so.*.*
 %attr(755,root,root) %ghost %{_libdir}/libbtrfs.so.0
+/lib/udev/rules.d/64-btrfs-dm.rules
 %{_mandir}/man5/btrfs.5*
 %{_mandir}/man8/btrfs.8*
 %{_mandir}/man8/btrfs-*.8*
