@@ -1,23 +1,23 @@
 Summary:	Utilities belonging to the btrfs filesystem
 Summary(pl.UTF-8):	Narzędzia należące do systemu plików btrfs
 Name:		btrfs-progs
-Version:	4.7
+Version:	4.12
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	https://www.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/%{name}-v%{version}.tar.xz
-# Source0-md5:	ce139902859bb0ed9efd3b120ede371e
+# Source0-md5:	4b1a143677597de413381118db8c10bb
 Patch0:		%{name}-man.patch
 URL:		http://btrfs.wiki.kernel.org/
 BuildRequires:	acl-devel
 BuildRequires:	asciidoc
 BuildRequires:	autoconf >= 2.60
-BuildRequires:	e2fsprogs-devel
+BuildRequires:	e2fsprogs-devel >= 1.42.0
 BuildRequires:	libblkid-devel
 BuildRequires:	libcom_err-devel
 BuildRequires:	libuuid-devel
 BuildRequires:	lzo-devel >= 2
-BuildRequires:	pkgconfig
+BuildRequires:	pkgconfig >= 0.9.0
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xmlto
 BuildRequires:	xz
@@ -84,27 +84,24 @@ install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man8}
 	libdir=%{_libdir} \
 	DESTDIR=$RPM_BUILD_ROOT
 
-ln -sf btrfsck $RPM_BUILD_ROOT%{_sbindir}/fsck.btrfs
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc INSTALL
-%attr(755,root,root) %{_sbindir}/btrfsck
-%attr(755,root,root) %{_sbindir}/mkfs.btrfs
-%attr(755,root,root) %{_sbindir}/fsck.btrfs
-%attr(755,root,root) %{_sbindir}/btrfs-debug-tree
-%attr(755,root,root) %{_sbindir}/btrfs-image
-%attr(755,root,root) %{_sbindir}/btrfs-convert
-%attr(755,root,root) %{_sbindir}/btrfstune
+%doc CHANGES README.md
 %attr(755,root,root) %{_sbindir}/btrfs
-%attr(755,root,root) %{_sbindir}/btrfs-map-logical
-%attr(755,root,root) %{_sbindir}/btrfs-zero-log
+%attr(755,root,root) %{_sbindir}/btrfs-convert
+%attr(755,root,root) %{_sbindir}/btrfs-debug-tree
 %attr(755,root,root) %{_sbindir}/btrfs-find-root
+%attr(755,root,root) %{_sbindir}/btrfs-image
+%attr(755,root,root) %{_sbindir}/btrfs-map-logical
 %attr(755,root,root) %{_sbindir}/btrfs-select-super
-%attr(755,root,root) %{_sbindir}/btrfs-show-super
+%attr(755,root,root) %{_sbindir}/btrfs-zero-log
+%attr(755,root,root) %{_sbindir}/btrfsck
+%attr(755,root,root) %{_sbindir}/btrfstune
+%attr(755,root,root) %{_sbindir}/fsck.btrfs
+%attr(755,root,root) %{_sbindir}/mkfs.btrfs
 %attr(755,root,root) %{_libdir}/libbtrfs.so.*.*
 %attr(755,root,root) %ghost %{_libdir}/libbtrfs.so.0
 /lib/udev/rules.d/64-btrfs-dm.rules
