@@ -1,17 +1,27 @@
---- btrfs-progs-v4.5.1/Documentation/Makefile.in.orig	2016-04-01 21:55:07.283162563 +0200
-+++ btrfs-progs-v4.5.1/Documentation/Makefile.in	2016-04-01 21:56:25.349825953 +0200
-@@ -92,10 +92,10 @@
+--- btrfs-progs-v4.17/Documentation/Makefile.in.orig	2018-06-15 16:21:17.000000000 +0200
++++ btrfs-progs-v4.17/Documentation/Makefile.in	2018-07-18 20:55:12.806687678 +0200
+@@ -37,9 +37,9 @@
+ MAN_TXT = $(MAN3_TXT) $(MAN8_TXT) $(MAN5_TXT)
+ MAN_XML = $(patsubst %.asciidoc,%.xml,$(MAN_TXT))
+ MAN_HTML = $(patsubst %.asciidoc,%.html,$(MAN_TXT))
+-GZ_MAN3 = $(patsubst %.asciidoc,%.3.gz,$(MAN3_TXT))
+-GZ_MAN5 = $(patsubst %.asciidoc,%.5.gz,$(MAN5_TXT))
+-GZ_MAN8 = $(patsubst %.asciidoc,%.8.gz,$(MAN8_TXT))
++GZ_MAN3 = $(patsubst %.asciidoc,%.3,$(MAN3_TXT))
++GZ_MAN5 = $(patsubst %.asciidoc,%.5,$(MAN5_TXT))
++GZ_MAN8 = $(patsubst %.asciidoc,%.8,$(MAN8_TXT))
+ 
+ mandir ?= $(prefix)/share/man
+ man3dir = $(mandir)/man3
+@@ -99,9 +99,9 @@
+ 	$(INSTALL) -m 644 $(GZ_MAN5) $(DESTDIR)$(man5dir)
+ 	# the source file name of btrfs.5 clashes with section 8 page, but we
  	# want to keep the code generic
- 	$(MV) $(DESTDIR)$(man5dir)/btrfs-man5.5.gz $(DESTDIR)$(man5dir)/btrfs.5.gz
+-	$(MV) $(DESTDIR)$(man5dir)/btrfs-man5.5.gz $(DESTDIR)$(man5dir)/btrfs.5.gz
++	$(MV) $(DESTDIR)$(man5dir)/btrfs-man5.5 $(DESTDIR)$(man5dir)/btrfs.5
  	$(INSTALL) -m 644 $(GZ_MAN8) $(DESTDIR)$(man8dir)
 -	$(LN_S) -f btrfs-check.8.gz $(DESTDIR)$(man8dir)/btrfsck.8.gz
--	$(LN_S) -f btrfs-rescue.8.gz $(DESTDIR)$(man8dir)/btrfs-zero-log.8.gz
--	$(LN_S) -f btrfs-inspect-internal.8.gz $(DESTDIR)$(man8dir)/btrfs-debug-tree.8.gz
--	$(LN_S) -f btrfs-inspect-internal.8.gz $(DESTDIR)$(man8dir)/btrfs-show-super.8.gz
 +	$(LN_S) -f btrfs-check.8 $(DESTDIR)$(man8dir)/btrfsck.8
-+	$(LN_S) -f btrfs-rescue.8 $(DESTDIR)$(man8dir)/btrfs-zero-log.8
-+	$(LN_S) -f btrfs-inspect-internal.8 $(DESTDIR)$(man8dir)/btrfs-debug-tree.8
-+	$(LN_S) -f btrfs-inspect-internal.8 $(DESTDIR)$(man8dir)/btrfs-show-super.8
  
  uninstall:
  	cd $(DESTDIR)$(man8dir); rm -f btrfs-check.8.gz $(GZ_MAN8)
