@@ -9,12 +9,12 @@
 Summary:	Utilities belonging to the btrfs filesystem
 Summary(pl.UTF-8):	Narzędzia należące do systemu plików btrfs
 Name:		btrfs-progs
-Version:	4.17
+Version:	4.17.1
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	https://www.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/%{name}-v%{version}.tar.xz
-# Source0-md5:	cbe47358a971d80529356a3b9aafa097
+# Source0-md5:	130be469ced99b01948af64b6a6312f6
 Patch0:		%{name}-man.patch
 Patch1:		%{name}-sh.patch
 Patch2:		%{name}-python-async.patch
