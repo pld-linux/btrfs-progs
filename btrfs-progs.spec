@@ -20,6 +20,7 @@ URL:		http://btrfs.wiki.kernel.org/
 BuildRequires:	acl-devel
 BuildRequires:	asciidoc
 BuildRequires:	autoconf >= 2.60
+BuildRequires:	automake
 BuildRequires:	e2fsprogs-devel >= 1.42.0
 BuildRequires:	libblkid-devel
 BuildRequires:	libcom_err-devel
@@ -153,6 +154,7 @@ Biblioteka Pythona do zarządzania systemami plików Btrfs.
 %build
 %{__aclocal} -I m4
 %{__autoconf}
+%{__autoheader}
 %configure \
 	%{!?with_python:--disable-python}
 %{__make} \
