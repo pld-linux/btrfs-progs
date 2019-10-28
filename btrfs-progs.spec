@@ -28,6 +28,7 @@ BuildRequires:	libuuid-devel
 BuildRequires:	lzo-devel >= 2
 BuildRequires:	pkgconfig >= 0.9.0
 %{?with_python:BuildRequires:	python3-devel >= 1:3.4}
+%{?with_python:BuildRequires:	python3-setuptools}
 BuildRequires:	reiserfsprogs-devel >= 3.6.27
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	udev-devel >= 1:190
