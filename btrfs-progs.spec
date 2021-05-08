@@ -9,12 +9,12 @@
 Summary:	Utilities belonging to the btrfs filesystem
 Summary(pl.UTF-8):	Narzędzia należące do systemu plików btrfs
 Name:		btrfs-progs
-Version:	5.3.1
-Release:	3
+Version:	5.11.1
+Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	https://www.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/%{name}-v%{version}.tar.xz
-# Source0-md5:	2c4197639f144b8b15df7d17e5399595
+# Source0-md5:	7a8d0201da222c838a89fb31511f8d86
 Patch0:		%{name}-sh.patch
 URL:		http://btrfs.wiki.kernel.org/
 BuildRequires:	acl-devel
@@ -236,6 +236,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libbtrfsutil.so
 %{_includedir}/btrfsutil.h
+%{_pkgconfigdir}/libbtrfsutil.pc
 
 %files -n libbtrfsutil-static
 %defattr(644,root,root,755)
@@ -244,5 +245,5 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python}
 %files -n python3-btrfsutil
 %attr(755,root,root) %{py3_sitedir}/btrfsutil.cpython-*.so
-%{py3_sitedir}/btrfsutil-1.1.1-py*.egg-info
+%{py3_sitedir}/btrfsutil-%{version}-py*.egg-info
 %endif
