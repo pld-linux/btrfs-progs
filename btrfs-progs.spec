@@ -9,14 +9,14 @@
 Summary:	Utilities belonging to the btrfs filesystem
 Summary(pl.UTF-8):	Narzędzia należące do systemu plików btrfs
 Name:		btrfs-progs
-Version:	5.11.1
+Version:	5.14.2
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	https://www.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/%{name}-v%{version}.tar.xz
-# Source0-md5:	7a8d0201da222c838a89fb31511f8d86
+# Source0-md5:	b6ee25093f2b262051c8c0348b27cb0e
 Patch0:		%{name}-sh.patch
-URL:		http://btrfs.wiki.kernel.org/
+URL:		https://btrfs.wiki.kernel.org/
 BuildRequires:	acl-devel
 BuildRequires:	asciidoc
 BuildRequires:	autoconf >= 2.60
@@ -94,7 +94,7 @@ Statyczna biblioteka dla systemu plików btrfs.
 %package -n libbtrfsutil
 Summary:	Library for managing Btrfs filesystems
 Summary(pl.UTF-8):	Biblioteka do zarządzania systemami plików Btrfs
-License:	LGPL v3
+License:	LGPL v2.1+
 Group:		Libraries
 
 %description -n libbtrfsutil
@@ -112,7 +112,7 @@ wiązania do Pythona (tylko Pythona 3).
 %package -n libbtrfsutil-devel
 Summary:	Header file for libbtrfsutil library
 Summary(pl.UTF-8):	Plik nagłówkowy biblioteki libbtrfsutil
-License:	LGPL v3
+License:	LGPL v2.1+
 Group:		Development/Libraries
 Requires:	libbtrfsutil = %{version}-%{release}
 
@@ -125,7 +125,7 @@ Plik nagłówkowy biblioteki libbtrfsutil.
 %package -n libbtrfsutil-static
 Summary:	Static libbtrfsutil library
 Summary(pl.UTF-8):	Statyczna biblioteka libbtrfsutil
-License:	LGPL v3
+License:	LGPL v2.1+
 Group:		Development/Libraries
 Requires:	libbtrfsutil-devel = %{version}-%{release}
 
@@ -139,7 +139,7 @@ Statyczna biblioteka libbtrfsutil.
 Summary:	Python library for managing Btrfs filesystems
 Summary(pl.UTF-8):	Biblioteka Pythona do zarządzania systemami plików Btrfs
 Group:		Libraries/Python
-License:	LGPL v3
+License:	LGPL v2.1+
 Requires:	libbtrfsutil = %{version}-%{release}
 
 %description -n python3-btrfsutil
