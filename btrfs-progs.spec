@@ -9,12 +9,12 @@
 Summary:	Utilities belonging to the btrfs filesystem
 Summary(pl.UTF-8):	Narzędzia należące do systemu plików btrfs
 Name:		btrfs-progs
-Version:	5.14.2
+Version:	5.16.1
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	https://www.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/%{name}-v%{version}.tar.xz
-# Source0-md5:	b6ee25093f2b262051c8c0348b27cb0e
+# Source0-md5:	1eb504968c13e2220e7533ebfe78e233
 Patch0:		%{name}-sh.patch
 URL:		https://btrfs.wiki.kernel.org/
 BuildRequires:	acl-devel
@@ -204,6 +204,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_sbindir}/fsck.btrfs
 %attr(755,root,root) %{_sbindir}/mkfs.btrfs
 /lib/udev/rules.d/64-btrfs-dm.rules
+/lib/udev/rules.d/64-btrfs-zoned.rules
 %{_mandir}/man5/btrfs.5*
 %{_mandir}/man8/btrfs.8*
 %{_mandir}/man8/btrfs-*.8*
