@@ -27,7 +27,7 @@ BuildRequires:	libcom_err-devel
 BuildRequires:	libuuid-devel
 BuildRequires:	linux-libc-headers >= 7:5.9
 BuildRequires:	lzo-devel >= 2
-BuildRequires:	pkgconfig >= 0.9.0
+BuildRequires:	pkgconfig >= 1:0.9.0
 %{?with_python:BuildRequires:	python3-devel >= 1:3.4}
 %{?with_python:BuildRequires:	python3-setuptools}
 BuildRequires:	reiserfsprogs-devel >= 3.6.27
