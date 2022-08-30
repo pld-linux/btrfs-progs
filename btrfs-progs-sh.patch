@@ -2,10 +2,10 @@
 +++ btrfs-progs-v4.17/configure.ac	2018-07-18 20:17:29.626713519 +0200
 @@ -280,7 +280,7 @@
  	documentation:      ${enable_documentation}
- 	doc generator:      ${ASCIIDOC_TOOL}
+ 	doc generator:      ${DOC_TOOL}
  	backtrace support:  ${enable_backtrace}
 -	btrfs-convert:      ${enable_convert} ${convertfs:+($convertfs)}
 +	btrfs-convert:      ${enable_convert}${convertfs:+ ($convertfs)}
- 	btrfs-restore zstd: ${enable_zstd}
+ 	zstd support:       ${enable_zstd}
+ 	lzo support:        ${enable_lzo}
  	Python bindings:    ${enable_python}
- 	Python interpreter: ${PYTHON}

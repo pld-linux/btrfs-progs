@@ -9,30 +9,31 @@
 Summary:	Utilities belonging to the btrfs filesystem
 Summary(pl.UTF-8):	Narzędzia należące do systemu plików btrfs
 Name:		btrfs-progs
-Version:	5.16.1
-Release:	3
+Version:	5.19
+Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	https://www.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/%{name}-v%{version}.tar.xz
-# Source0-md5:	1eb504968c13e2220e7533ebfe78e233
+# Source0-md5:	7975ad827b59513243f55705b3b5a9b7
 Patch0:		%{name}-sh.patch
 URL:		https://btrfs.wiki.kernel.org/
 BuildRequires:	acl-devel
-BuildRequires:	asciidoc
 BuildRequires:	autoconf >= 2.60
+BuildRequires:	autoconf-archive
 BuildRequires:	automake
 BuildRequires:	e2fsprogs-devel >= 1.42.0
 BuildRequires:	libblkid-devel
 BuildRequires:	libcom_err-devel
 BuildRequires:	libuuid-devel
+BuildRequires:	linux-libc-headers >= 7:5.9
 BuildRequires:	lzo-devel >= 2
 BuildRequires:	pkgconfig >= 0.9.0
 %{?with_python:BuildRequires:	python3-devel >= 1:3.4}
 %{?with_python:BuildRequires:	python3-setuptools}
 BuildRequires:	reiserfsprogs-devel >= 3.6.27
+BuildRequires:	sphinx-pdg
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	udev-devel >= 1:190
-BuildRequires:	xmlto
 BuildRequires:	xz
 BuildRequires:	zlib-devel
 BuildRequires:	zstd-devel >= 1.0.0
