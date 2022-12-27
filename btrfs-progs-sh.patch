@@ -8,4 +8,4 @@
 +	btrfs-convert:      ${enable_convert}${convertfs:+ ($convertfs)}
  	zstd support:       ${enable_zstd}
  	lzo support:        ${enable_lzo}
- 	Python bindings:    ${enable_python}
+ 	fsverity support:   ${have_fsverity}
