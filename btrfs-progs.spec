@@ -9,12 +9,12 @@
 Summary:	Utilities belonging to the btrfs filesystem
 Summary(pl.UTF-8):	Narzędzia należące do systemu plików btrfs
 Name:		btrfs-progs
-Version:	6.1.3
+Version:	6.2
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	https://www.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/%{name}-v%{version}.tar.xz
-# Source0-md5:	d5f703b4085dc745003c16d046d32c2b
+# Source0-md5:	b2ff42092faa49844e6840178c3dfd02
 Patch0:		%{name}-sh.patch
 URL:		https://btrfs.wiki.kernel.org/
 BuildRequires:	acl-devel
@@ -22,6 +22,7 @@ BuildRequires:	autoconf >= 2.60
 BuildRequires:	autoconf-archive
 BuildRequires:	automake
 BuildRequires:	e2fsprogs-devel >= 1.42.0
+BuildRequires:	gcc >= 6:4.7
 BuildRequires:	libblkid-devel
 BuildRequires:	libcom_err-devel
 BuildRequires:	libuuid-devel
