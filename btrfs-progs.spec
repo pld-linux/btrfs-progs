@@ -9,12 +9,12 @@
 Summary:	Utilities belonging to the btrfs filesystem
 Summary(pl.UTF-8):	Narzędzia należące do systemu plików btrfs
 Name:		btrfs-progs
-Version:	6.2
+Version:	6.2.1
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	https://www.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/%{name}-v%{version}.tar.xz
-# Source0-md5:	b2ff42092faa49844e6840178c3dfd02
+# Source0-md5:	01ae2a122acefb0f34ad7de8a41c213d
 Patch0:		%{name}-sh.patch
 URL:		https://btrfs.wiki.kernel.org/
 BuildRequires:	acl-devel
