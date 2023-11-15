@@ -1,7 +1,8 @@
 #
 # Conditional build:
-%bcond_without	python	# Python bindings for libbtrfsutil
-%bcond_without	tests	# libbtrfsutil tests (requires python)
+%bcond_without	python		# Python bindings for libbtrfsutil
+%bcond_without	static_libs	# static libraries
+%bcond_without	tests		# libbtrfsutil tests (requires python)
 
 %if %{without python}
 %undefine	with_tests
@@ -32,6 +33,7 @@ BuildRequires:	pkgconfig >= 1:0.9.0
 %{?with_python:BuildRequires:	python3-devel >= 1:3.4}
 %{?with_python:BuildRequires:	python3-setuptools}
 BuildRequires:	reiserfsprogs-devel >= 3.6.27
+BuildRequires:	rpmbuild(macros) >= 1.527
 BuildRequires:	sphinx-pdg
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	udev-devel >= 1:190
@@ -159,6 +161,7 @@ Biblioteka Pythona do zarządzania systemami plików Btrfs.
 %{__autoconf}
 %{__autoheader}
 %configure \
+	%{__enable_disable static_libs static} \
 	%{!?with_python:--disable-python}
 %{__make} \
 	V=1
@@ -225,9 +228,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libbtrfs.so
 %{_includedir}/btrfs
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libbtrfs.a
+%endif
 
 %files -n libbtrfsutil
 %defattr(644,root,root,755)
@@ -241,9 +246,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/btrfsutil.h
 %{_pkgconfigdir}/libbtrfsutil.pc
 
+%if %{with static_libs}
 %files -n libbtrfsutil-static
 %defattr(644,root,root,755)
 %{_libdir}/libbtrfsutil.a
+%endif
 
 %if %{with python}
 %files -n python3-btrfsutil
