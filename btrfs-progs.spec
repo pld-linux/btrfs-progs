@@ -10,12 +10,12 @@
 Summary:	Utilities belonging to the btrfs filesystem
 Summary(pl.UTF-8):	Narzędzia należące do systemu plików btrfs
 Name:		btrfs-progs
-Version:	6.6.2
+Version:	6.6.3
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	https://www.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/%{name}-v%{version}.tar.xz
-# Source0-md5:	84b63af7b5cdb641cedcae6f9b563d5b
+# Source0-md5:	a26465478fd2d009cc2fe9f035cc299d
 Patch0:		%{name}-sh.patch
 URL:		https://btrfs.readthedocs.io
 BuildRequires:	acl-devel
@@ -32,6 +32,7 @@ BuildRequires:	lzo-devel >= 2
 BuildRequires:	pkgconfig >= 1:0.9.0
 %{?with_python:BuildRequires:	python3-devel >= 1:3.4}
 %{?with_python:BuildRequires:	python3-setuptools}
+BuildRequires:	python3-sphinx_rtd_theme
 BuildRequires:	reiserfsprogs-devel >= 3.6.27
 BuildRequires:	rpmbuild(macros) >= 1.527
 BuildRequires:	sphinx-pdg
