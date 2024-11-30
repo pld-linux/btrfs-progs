@@ -10,12 +10,12 @@
 Summary:	Utilities belonging to the btrfs filesystem
 Summary(pl.UTF-8):	Narzędzia należące do systemu plików btrfs
 Name:		btrfs-progs
-Version:	6.11
+Version:	6.12
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	https://www.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/%{name}-v%{version}.tar.xz
-# Source0-md5:	4191f42d55b7e1dc9a595540036b26c5
+# Source0-md5:	ca0132bf17e5e57b214faf160a43b446
 Patch0:		%{name}-sh.patch
 URL:		https://btrfs.readthedocs.io
 BuildRequires:	acl-devel
@@ -156,8 +156,6 @@ Biblioteka Pythona do zarządzania systemami plików Btrfs.
 %prep
 %setup -q -n %{name}-v%{version}
 %patch0 -p1
-
-grep -q "version='6.10'" libbtrfsutil/python/setup.py && %{__sed} -i -e "s/version='6.10'/version='%{version}'/" libbtrfsutil/python/setup.py
 
 %build
 %{__aclocal} -I m4
