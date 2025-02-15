@@ -155,7 +155,7 @@ Biblioteka Pythona do zarządzania systemami plików Btrfs.
 
 %prep
 %setup -q -n %{name}-v%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__aclocal} -I m4
