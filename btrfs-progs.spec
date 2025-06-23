@@ -34,6 +34,7 @@ BuildRequires:	pkgconfig >= 1:0.9.0
 %{?with_python:BuildRequires:	python3-setuptools}
 BuildRequires:	python3-sphinx_rtd_theme
 BuildRequires:	reiserfsprogs-devel >= 3.6.27
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.527
 BuildRequires:	sphinx-pdg
 BuildRequires:	tar >= 1:1.22
